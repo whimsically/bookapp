@@ -34,11 +34,11 @@ const resolvers = {
     
           return { token, user };
         },
-        saveBook: async (parent, { bookId }, context) => {
+        saveBook: async (parent, { bookData }, context) => {
           if (context.user) {
             await User.findOneAndUpdate(
-              { _id: context.user._id },
-              { $addToSet: { savedBooks: bookId } }
+              { username: Auth.getProfile().data.username },
+              { $addToSet: { savedBooks: {...bookData} } }
             );
     
             return bookId;

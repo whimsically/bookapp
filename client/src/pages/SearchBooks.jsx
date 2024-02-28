@@ -76,7 +76,14 @@ const SearchBooks = () => {
     }
 
     try {
-      const response = await saveBook(bookToSave, token);
+      const response = await saveBook( { variables: {
+        bookId: bookToSave.bookId,
+        authors: bookToSave.authors,
+        description: bookToSave.description,
+        title: bookToSave.title,
+        image: bookToSave.image,
+        link: bookToSave.link
+      } });
 
       if (!response.ok) {
         throw new Error('something went wrong!');
