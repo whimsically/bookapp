@@ -6,7 +6,7 @@ The goal of this project was to take an existing app using RESTFul API and refac
 
 ## Usage
 
-Visit the deployed application [here](https://google.com)
+Visit the deployed application [here](https://)
 
 ![screenshot](bookapp-ss.png)
 
